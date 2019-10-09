@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="web">
+            <group id="pwa" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Progressive Web Application</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Name</label>
+                </field>
+                <field id="short_name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Short name</label>
+                </field>
+                <field id="theme_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Theme color</label>
+                </field>
+                <field id="background_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background color</label>
+                </field>
+                <field id="display" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display mode</label>
+                    <source_model>Krisznal\PWA\Model\Config\DisplayMode</source_model>
+                </field>
+                <field id="orientation" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Orientation</label>
+                    <source_model>Krisznal\PWA\Model\Config\Orientation</source_model>
+                </field>
+                <field id="logo" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Logo</label>
+                    <comment>It have to be PNG file with size of at least 512x512 pixels.</comment>
+                    <backend_model>Krisznal\PWA\Model\Config\Logo</backend_model>
+                    <upload_dir config="system" scope_info="1">krisznal_pwa</upload_dir>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

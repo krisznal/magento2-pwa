@@ -1,0 +1,10 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+
+/** @var \Krisznal\PWA\Block\MetaTags $configProvider */
+$configProvider = $block->getData('config_provider');
+?>
+<meta name="theme-color" content="<?php echo $block->escapeHtml($configProvider->getThemeColor()); ?>">
+<?php foreach (\Krisznal\PWA\Helper\ConfigProvider::APPLE_TOUCH_ICON_SIZES as $size):?>
+    <link rel="apple-touch-icon" sizes="<?php echo $size['width'] . 'x' . $size['height']; ?>>" href="<?php echo $block->escapeUrl($configProvider->getResizedLogo($size['width'], $size['height']));?>" />
+<?php endforeach; ?>
